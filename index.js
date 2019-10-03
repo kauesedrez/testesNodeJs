@@ -3,7 +3,8 @@ var express = require("express");
 var app = express();
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-app.set("port", 3000);
+var porta = process.env.PORT || 3000;
+app.set("port", porta);
 app.use(express.static(__dirname + "/_public")); // diretorio compartilhado entre as paginas do programa
 app.set("views", "./_views");
 app.set("view engine", "ejs");
