@@ -1,0 +1,25 @@
+{
+  "name": "servidorteste",
+  "version": "1.0.0",
+  "description": "Teste de funções com node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kauesedrez/testesNodeJs.git"
+  },
+  "author": "Winetu Kaue Sedrez Bilhalva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kauesedrez/testesNodeJs/issues"
+  },
+  "homepage": "https://github.com/kauesedrez/testesNodeJs#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.3"
+  }
+}
