@@ -22,9 +22,11 @@ app.post("/carregaInfos", function(request, response) {
 
 	const nome = request.body.nome;
 
+	var html = "<div class='div1' style='background-color:"+nome+"'></div>"
+
 	setTimeout(()=>{
-		response.json(nome);
-	},2000);
+		response.json(html);
+	},5000);
 	
 
 });

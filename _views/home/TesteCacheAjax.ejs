@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Teste Cache Ajax</title>
+    <style type="text/css">
+        .div1 {
+            background-color: #ccc;
+            margin:10px;
+            width:300px;
+            height:350px;
+        }
+    </style>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,7 +30,7 @@
         <h1>Hello, world!</h1>
         <input type='text' id='nome' class='form-control' />
         <button class="btn btn-primary" id='btn-enviar' onclick="carregaInfos()" style='margin-top:20px; display: block;'>Enviar</button>
-        <div id="retorno" style="margin-top:100px;"></div>
+        <div id="retorno" style="margin-top:10px;"></div>
         <!--
 
 
@@ -35,6 +43,11 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         <script type="text/javascript">
+
+            $(function(){
+                carregaInfos();
+            })
+
         function carregando(status) {
             if (status == "show") {
                 $("#btn-enviar").html("Carregando ...");
@@ -55,7 +68,7 @@
                 success: function(data) {
                     console.log("done: ",data)
 
-                    $("#retorno").prepend("<br>" + data);
+                    $("#retorno").html("<br>" + data);
 
                     carregando("hide");
                 }
