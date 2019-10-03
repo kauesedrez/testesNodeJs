@@ -74,9 +74,9 @@
                     console.log("beforeSend")
                     if (localStorage.getItem(url)) {
                         success(localStorage.getItem(url));
-                        return true;
+                        
                     }
-                    return false;
+                    
 
                 };
                 options.success = function(data, textStatus) {
