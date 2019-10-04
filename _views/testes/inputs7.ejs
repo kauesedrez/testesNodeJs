@@ -4704,6 +4704,11 @@ Aenean faucibus egestas consectetur. Aenean cursus tincidunt scelerisque. Nam a 
 Vestibulum in orci ante. Duis ex enim, luctus eget ipsum non, aliquet tristique nibh. Morbi pretium eros a orci viverra tempus. Nulla posuere ligula quis turpis vulputate, nec auctor sapien finibus. Maecenas finibus nec neque a pretium. Integer et eros non quam volutpat sollicitudin. Fusce sit amet purus ut nibh egestas dapibus.
 
 Vestibulum faucibus pretium diam non auctor. Vivamus eu lorem sit amet erat varius vulputate. Pellentesque maximus tellus vel est scelerisque ultricies. Morbi faucibus porttitor lacinia. Ut ornare tempor odio, vitae luctus massa varius a. Curabitur iaculis mauris accumsan, euismod est id, lacinia quam. Ut tristique hendrerit velit ut posuere. Proin in nunc a quam venenatis bibendum quis ornare lectus. Nam blandit ultricies massa, sit amet condimentum nibh tristique in.`;
+
+function inserir(){
+    $(".output").html(texto)
+}
+
     </script>
 </head>
 
@@ -4722,6 +4727,11 @@ Vestibulum faucibus pretium diam non auctor. Vivamus eu lorem sit amet erat vari
             </a>
         </div>
         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" onclick="inserir()">
+            inserir texto
+        </button>
+        <hr>
+
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
             Launch demo modal
         </button>
@@ -4788,6 +4798,8 @@ Vestibulum faucibus pretium diam non auctor. Vivamus eu lorem sit amet erat vari
 <input type="text" class='input1 form-control' /><hr>
 <input type="text" class='input1 form-control' /><hr>
 <input type="text" class='input1 form-control' /><hr>
+
+<div class='output'></div>
 
 
        
