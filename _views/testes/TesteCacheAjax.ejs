@@ -78,6 +78,7 @@
         }
 
         $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+            var prosseguir = true;
             if (options.cache) {
 
                 var success = originalOptions.success || $.noop,
@@ -89,7 +90,7 @@
                     console.log("beforeSend")
                     if (localStorage.getItem(url)) {
                         success(localStorage.getItem(url));
-                        
+                        return false;                        
                     }
                     
 
