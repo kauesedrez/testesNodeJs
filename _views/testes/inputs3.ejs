@@ -5,22 +5,24 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149415349-1"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-          gtag('config', 'UA-149415349-1');
-        </script>
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-149415349-1');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Servidor de Testes Heroku</title>
+    
     <style type="text/css">
-    @import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Mansalva&display=swap');
 
     body {
-        font-family: "Mansalva" !important;
+        font-family: "Big Shoulders Display" !important;
     }
 
     .links {
@@ -60,6 +62,16 @@
     <meta name="msapplication-navbutton-color" content="#db4d48">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="/socket.io.js"></script>
+    <script src="/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("h1").swipe({
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                alert("You swiped " + direction);
+            }
+        });
+    })
+    </script>
 </head>
 
 <body>
@@ -81,9 +93,10 @@
                     </div>
                     <div class="modal-body">
                         <input type="text" class='input1 form-control' />
-                        input dentro do modal<hr>
+                        input dentro do modal
+                        <hr>
                         <input type="number" style="text-transform: uppercase" class='input-cc' placeholder="Número do cartão" id="cc-numero-input" oninput="javascript: if (this.value.length > 16) this.value = this.value.slice(0, this.maxLength);" />
-                                    <i class="far fa-credit-card pull-right"></i>
+                        <i class="far fa-credit-card pull-right"></i>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
