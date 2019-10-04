@@ -59,3 +59,9 @@ app.get("/testeInputs", function(request, response) {
 	response.render("testes/inputs")
 	 //endregion
 });
+
+app.get("/testeInputs/:pagina", function(request, response) {
+	//region
+	response.render("testes/inputs"+request.params.pagina)
+	 //endregion
+});
