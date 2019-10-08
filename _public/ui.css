@@ -1,0 +1,45 @@
+body {
+    padding: 20px;
+}
+
+.pai1 {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid red;
+    align-items: center;
+}
+
+.filho1 {
+    border: 1px solid blue;
+    margin: 10px;
+    flex: 1;
+}
+
+.pad-pai {
+    width: 500px;
+    height: 200px;
+    padding: 50px;
+    border: 1px solid red;
+}
+
+.pad-filho {
+    width: 100%;
+    height: 100%;
+    margin:100px;
+    border: 1px dotted blue;
+}
+
+.pad-pai2 {
+    width: 500px;
+    height: 200px;
+    padding: 50px;
+    border: 1px solid red;
+}
+
+.pad-filho2 {
+    width: 100%;
+    height: 100%;
+    margin:0px;
+    border: 1px dotted blue;
+}

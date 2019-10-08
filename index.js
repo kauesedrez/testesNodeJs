@@ -65,3 +65,10 @@ app.get("/testeInputs/:pagina", function(request, response) {
 	response.render("testes/inputs"+request.params.pagina)
 	 //endregion
 });
+
+app.get("/ui", function(request, response) {
+	//region
+    
+    response.render("testes/ui");
+    //endregion
+});

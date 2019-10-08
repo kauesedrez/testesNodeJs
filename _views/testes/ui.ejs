@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Estudos de User Interface</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/ui.css">
+</head>
+
+<body>
+    <h1>Testes UI</h1>
+    <h4>Dica de UI, usar a extensão Page Ruler https://chrome.google.com/webstore/detail/page-ruler/emliamioobfffbgcfdchabfibonehkme</h4>
+    <h2>Alinhando verticalmente</h2>
+    <div class='container'>
+        <div class='pai1'>
+            <div class='filho1'>O segredo aqui é usar no pai display: flex; e align-items: center; e no filho flex:1; guia completo em
+                <a href="https://origamid.com/projetos/flexbox-guia-completo/" target="_blank">https://origamid.com/projetos/flexbox-guia-completo/</a>
+            </div>
+            <div class='filho1'>Filho flex:1;</div>
+        </div>
+    </div>
+    <h2>Teste de padding com width 100%</h2>
+    <div class='container'>
+        <div class="pad-pai">
+            <div class="pad-filho">O problema é usar margin em um elemento filho, margin:100px;</div>
+        </div>
+    </div>
+
+     <div class='container'>
+        <div class="pad-pai2">
+            <div class="pad-filho2">padding pai 50px e margin:0px no filho, works like a charm</div>
+        </div>
+    </div>
+</body>
+
+</html>
