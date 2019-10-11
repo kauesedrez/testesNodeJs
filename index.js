@@ -20,6 +20,12 @@ app.get("/", function(request, response) {
     //endregion
 });
 
+app.get("/win1", function(request, response) {
+	//region
+	response.render("win1/teste");
+	//endregion
+});
+
 app.get("/testeCacheAjax", function(request, response) {
 	//region
     let parametros = [];
