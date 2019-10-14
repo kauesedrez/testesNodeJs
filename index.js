@@ -10,7 +10,7 @@ app.set("views", "./_views");
 app.set("view engine", "ejs");
 var server = app.listen(app.get("port"));
 
-console.log("Online")
+console.log("Online na porta "+porta)
 
 app.get("/", function(request, response) {
 	//region
@@ -23,6 +23,12 @@ app.get("/", function(request, response) {
 app.get("/win1", function(request, response) {
 	//region
 	response.render("win1/teste");
+	//endregion
+});
+
+app.get("/win2", function(request, response) {
+	//region
+	response.render("win2/Teste_prod");
 	//endregion
 });
 
