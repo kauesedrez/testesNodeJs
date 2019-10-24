@@ -20,6 +20,14 @@ app.get("/", function(request, response) {
     //endregion
 });
 
+app.get("/mobileclick", function(request, response) {
+	//region
+
+    response.render("mobile/click");
+
+    //endregion
+});
+
 app.get("/win1", function(request, response) {
 	//region
 	response.render("win1/teste");
