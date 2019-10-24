@@ -20,10 +20,10 @@ app.get("/", function(request, response) {
     //endregion
 });
 
-app.get("/mobileclick", function(request, response) {
+app.get("/mobile/:pagina", function(request, response) {
 	//region
 
-    response.render("mobile/click");
+    response.render(`mobile/${request.params.pagina}`);
 
     //endregion
 });
