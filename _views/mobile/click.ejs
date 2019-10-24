@@ -53,12 +53,17 @@
     <script>
     $(function() {
         $(".btn").mousedown(function() {
+        	const startTime = new Date();
             $(".btn").css("background-color", "blue");
             $(this).css("background-color", "red");
 
             $(".divs").hide();
             var alvo = $(this).attr("data-alvo");
             $("#" + alvo).show();
+            const endTime = new Date();
+
+            const timeDiff = endTime - startTime;
+            $("h1").html(timeDiff)
             
         })
     })
