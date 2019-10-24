@@ -34,13 +34,25 @@
     .divs {
         display: none;
     }
+    #div1{
+    	background-color: #cc55dd;
+    }
+    #div2{
+    	background-color: #aa9988;
+    }
+    #div3{
+    	background-color: #ca5421;
+    }
+    #div4{
+    	background-color: #aaaabb;
+    }
     </style>
 </head>
 
 <body>
     <script>
     $(function() {
-        $(".btn").click(function() {
+        $(".btn").mousedown(function() {
             $(".btn").css("background-color", "blue");
             $(this).css("background-color", "red");
 
@@ -52,7 +64,7 @@
     })
     </script>
     <div class="container-fluid">
-        <h1>Teste de dalay do onclick.</h1>
+        <h1>Teste de dalay do onclick. [mousedown version]</h1>
         <div class='rodape'>
             <button class='btn btn-primary' data-alvo="div1">Div 1</button>
             <button class='btn btn-primary' data-alvo="div2">Div 2</button>
