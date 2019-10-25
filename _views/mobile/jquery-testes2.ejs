@@ -25,6 +25,8 @@
     <style>
     body {
         will-change: transform;
+        /*-webkit-transform: translate3d(0,0,0);*/
+
     }
 
     .rodape {
@@ -47,6 +49,7 @@
         line-height: 40px;
         margin: 0px !important;
         will-change: transform;
+        /*-webkit-transform: translate3d(0,0,0);*/
 
     }
 
@@ -105,13 +108,8 @@
     })
     </script>
     <h1>Jquery testes</h1>
-    Agora o desafio é fazer não ter mais blink on scroll. will-change: transform;
-    <div class='rodape'>
-        <button class='btn btn-primary' data-alvo="div1">Div 1</button>
-        <button class='btn btn-primary' data-alvo="div2">Div 2</button>
-        <button class='btn btn-primary' data-alvo="div3">Div 3</button>
-        <button class='btn btn-primary' data-alvo="div4">Div 4</button>
-    </div>
+    Agora o desafio é fazer não ter mais blink on scroll. will-change: transform; os menus fixeds tem que ser colocados por ultimo na <body>
+  
     <div class="app">
         <div class="app-in">
             <div class="divs" id='div1'>
@@ -287,6 +285,14 @@
                 Quisque pulvinar purus ac semper efficitur. Sed tortor erat, lacinia eu varius a, placerat id nisl. Etiam sed imperdiet nisi. Cras gravida egestas mi, eget rhoncus diam sollicitudin quis. Nulla eget tincidunt quam. Curabitur luctus sollicitudin est, ac blandit eros convallis quis. Quisque enim lorem, scelerisque eget tortor sit amet, rhoncus ultrices elit. Pellentesque vel vehicula quam. Sed eget auctor massa. Integer egestas libero urna, non euismod sapien tristique eget. Aenean molestie enim quis ex posuere ultricies. Suspendisse dictum fermentum arcu, sed imperdiet magna tempus vitae. Donec id laoreet justo. Duis semper fringilla posuere. Etiam dapibus vitae nisi at rutrum. Donec et dui vehicula, ultricies libero eu, sollicitudin libero.
             </div>
         </div>
+    </div>
+
+
+      <div class='rodape'>
+        <button class='btn btn-primary' data-alvo="div1">Div 1</button>
+        <button class='btn btn-primary' data-alvo="div2">Div 2</button>
+        <button class='btn btn-primary' data-alvo="div3">Div 3</button>
+        <button class='btn btn-primary' data-alvo="div4">Div 4</button>
     </div>
 </body>
 
