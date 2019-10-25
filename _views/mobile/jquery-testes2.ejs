@@ -24,8 +24,7 @@
     <![endif]-->
     <style>
     body {
-        will-change: scroll-position;
-        -webkit-overflow-scrolling: touch;
+        will-change: transform;
     }
 
     .rodape {
@@ -47,13 +46,12 @@
         width: 100vw;
         line-height: 40px;
         margin: 0px !important;
-        will-change: scroll-position;
-        -webkit-overflow-scrolling: touch;
+        will-change: transform;
 
     }
 
     #div1 {
-        background-color: #cc55dd;
+        background-color: #55ccdd;
     }
 
     #div2 {
@@ -73,8 +71,7 @@
         overflow-x: scroll;
         display: inline-block;
         margin: 0px !important;
-        will-change: scroll-position;
-        -webkit-overflow-scrolling: touch;
+        will-change: transform;
     }
 
     .app-in {
@@ -82,8 +79,7 @@
         overflow-x: scroll;
         display: inline-block;
         margin: 0px !important;
-        will-change: scroll-position;
-        -webkit-overflow-scrolling: touch;
+        will-change: transform;
     }
     </style>
 </head>
@@ -109,7 +105,7 @@
     })
     </script>
     <h1>Jquery testes</h1>
-    Agora o desafio é fazer não ter mais blink on scroll. will-change: scroll-position; -webkit-overflow-scrolling:touch;
+    Agora o desafio é fazer não ter mais blink on scroll. will-change: transform;
     <div class='rodape'>
         <button class='btn btn-primary' data-alvo="div1">Div 1</button>
         <button class='btn btn-primary' data-alvo="div2">Div 2</button>
