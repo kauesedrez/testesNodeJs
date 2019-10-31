@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- https://developers.google.com/web/ilt/pwa/working-with-indexeddb -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <title>Tutorial WinnetouJs 1</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    var request = indexedDB.open('cedros', 2);
+    var db;
+    $(function() {
+        if (!('indexedDB' in window)) {
+            console.log('This browser doesn\'t support IndexedDB');
+            return;
+        }
+
+        request.onerror = function(event) {
+            // Fazer algo com request.errorCode!
+            console.log("Ocorreu um erro inesperado. Por favor, consulte o suporte.", event.target.errorCode)
+        };
+        request.onsuccess = function(event) {
+            // Fazer algo com request.result!
+            db = this.result;
+            console.log("Banco de dados aberto com sucesso.");
+        };
+        // Este evento é implementado somente em navegadores mais recentes
+        request.onupgradeneeded = function(event) {
+
+            // cria um objectStore para esse banco
+            var objectStore = event.target.result.createObjectStore("timeline", { autoIncrement: true });
+            console.log("Criada a colleção timeline")
+
+            // const Dados = [
+            //     { ssn: "444-44-4444", nome: "Bill", idade: 35, email: "bill@company.com" },
+            //     { ssn: "555-55-5555", nome: "Donna", idade: 32, email: "donna@home.org" }
+            // ];
+
+            // for (var i in Dados) {
+            //     objectStore.add(Dados[i]);
+            // }
+
+            // console.log(">>> Dados inseridos com sucesso")
+
+        };
+
+        $("#salvar").click(function() {
+
+            const nome = $("#nome").val();
+            const telefone = $("#telefone").val();
+            const cidade = $("#cidade").val();
+
+            const data = [{
+                'nome': nome,
+                'telefone': telefone,
+                'cidade': cidade
+            }]
+
+            adicionar(data);
+
+        })
+
+    })
+    const adicionar = dados => {
+
+        var transaction = db.transaction(
+            ["timeline"], "readwrite");
+        // Faz algo após a inserção dos dados.
+        transaction.oncomplete = function(event) {
+            console.log("Pronto!");
+        };
+
+        transaction.onerror = function(event) {
+            // Não esquecer de tratar os erros!
+        };
+
+        var objectStore = transaction.objectStore("timeline");
+        for (var i in dados) {
+            var request = objectStore.add(dados[i]);
+            request.onsuccess = function(event) {
+                // event.target.result == dados[i].ssn;
+                console.log("salvo com sucesso")
+            };
+            request.onerror = function() {
+                console.error("addPublication error", this.error);
+                
+            };
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+    <div class='container-fluid'>
+        Object store sao as collections dentro do Database.
+        <h2> A ideia é mostrar tudo que esta no banco, poder salvar antes, depois e também poder apagar tudo.</h2>
+        Nome:<br>
+        <input type='text' class='form-control' id="nome">
+        <hr>
+        Telefone:<br>
+        <input type='text' class='form-control' id="telefone">
+        <hr>
+        Cidade:<br>
+        <input type='text' class='form-control' id="cidade">
+        <hr>
+        <button class='btn btn-success' id="salvar">Salvar</button>
+    </div>
+</body>
+
+</html>

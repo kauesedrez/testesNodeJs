@@ -20,6 +20,22 @@ app.get("/", function(request, response) {
     //endregion
 });
 
+app.get("/Indexed/:pagina", function(request, response) {
+	//region
+
+    response.render(`indexed/${request.params.pagina}`);
+
+    //endregion
+});
+
+app.get("/css/:pagina", function(request, response) {
+	//region
+
+    response.render(`css/${request.params.pagina}`);
+
+    //endregion
+});
+
 app.get("/mobile/:pagina", function(request, response) {
 	//region
 
@@ -87,8 +103,7 @@ app.get("/testeInputs/:pagina", function(request, response) {
 });
 
 app.get("/ui", function(request, response) {
-	//region
-    
+	//region    
     response.render("testes/ui");
     //endregion
 });
